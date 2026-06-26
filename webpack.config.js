@@ -52,7 +52,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx|tsx)$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!osh-js)/,
                 use: ["babel-loader"],
             },
             {
@@ -85,10 +85,6 @@ module.exports = {
                         name: '[name].[ext]',
                     }
                 },
-            },
-            {
-                test: /\.worker\.js$/,
-                use: {loader: 'worker-loader', options: {filename: 'Worker.[chunkhash].js'}}
             },
         ],
     },
